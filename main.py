@@ -20,8 +20,6 @@ height_label.pack()
 height_entry=Entry()
 height_entry.pack()
 
-#texts
-
 myList=[]
 #calculate
 def calculate_bmi():
@@ -33,9 +31,27 @@ def calculate_bmi():
     bmi_person=weight_int/(((height_int/100)*(height_int/100)))
     print(bmi_person)
     obeseString =f"Your BMI is {bmi_person},you are obese."
+    underweight=f"Your BMI is {bmi_person},you are underweight."
+    normal=f"Your BMI is {bmi_person},you are normal."
+    overweight=f"Your BMI is {bmi_person},you are overweight."
     if bmi_person>=40:
         obese_label=Label(text=obeseString)
         obese_label.pack()
+    elif bmi_person<=18.4:
+        underweight_label=Label(text=underweight)
+        underweight_label.pack()
+    elif 18.5 <= bmi_person <= 24.9:
+        normal_label=Label(text=normal)
+        normal_label.pack()
+    elif 25.0 <= bmi_person<= 39.9:
+        overweight_label=Label(text=overweight)
+        overweight_label.pack()
+    else:
+        print("Enter valid numbers.")
+
+    myList.clear()
+
+
 #button
 calculate_button=Button(text="calculate",command=calculate_bmi)
 calculate_button.pack()
