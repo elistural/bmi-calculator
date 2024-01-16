@@ -25,11 +25,9 @@ myList=[]
 def calculate_bmi():
     myList.append(weight_entry.get())
     myList.append(height_entry.get())
-    print(myList)
     weight_int=float(myList[0])
     height_int=float(myList[1])
     bmi_person=weight_int/(((height_int/100)*(height_int/100)))
-    print(bmi_person)
     obeseString =f"Your BMI is {bmi_person},you are obese."
     underweight=f"Your BMI is {bmi_person},you are underweight."
     normal=f"Your BMI is {bmi_person},you are normal."
